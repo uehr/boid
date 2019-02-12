@@ -12,7 +12,7 @@ import random
 # v3: nearBardsAverageMoveAmount
 
 class bard(baseLife.baseLife):
-    def __init__(self, worldHeight, worldWidth, spawnY, spawnX, r1=0.9, r2=0.5, r3=0.5, maxSpeed=3, sizePx=10):
+    def __init__(self, worldHeight, worldWidth, spawnY, spawnX, r1=0.9, r2=0.5, r3=0.5, maxSpeed=15, sizePx=30):
         super().__init__(worldHeight, worldWidth, spawnY, spawnX)
         self.otherBards = []
         self.type = "bard"
@@ -30,10 +30,10 @@ class bard(baseLife.baseLife):
         self.maxSpeed = maxSpeed
 
 
-    def draw(self, img, tailLength=7):
+    def draw(self, img, tailLength=3):
         tailPoint = self.point[0] + int(self.vy) * tailLength * -1, self.point[1] + int(self.vx) * tailLength * -1
         img = cv2.circle(img, self.point, self.sizePx, self.color, -1)
-        img = cv2.line(img, self.point, tailPoint, self.color, 5)
+        img = cv2.line(img, self.point, tailPoint, self.color, 30)
 
         return img
 
