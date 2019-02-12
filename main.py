@@ -1,11 +1,11 @@
 import world
-from bard import bard
+from fish import fish
 import cv2
 
 world = world.world(1920, 1080)
 
 for _ in range(20):
-    world.addLife(bard)
+    world.addLife(fish)
 
 while True:
     worldImg = world.draw()
